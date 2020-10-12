@@ -2,7 +2,6 @@
 # Example file for HelloWorld
 #
 
-
 def main():
     print("hello world")
     name = input("What is your name? ")
