@@ -14,5 +14,9 @@ def main():
 
     print(st)
 
+    ts = "x is less than y" if (x<y) else "x is greater or equal to y"
+    
+    print(ts)
+
 if __name__ == "__main__":
     main()
