@@ -3,15 +3,20 @@
 
 def main():
     print("test")
-    
-
-    for i in range(10):
-        ans = input("continue? (y/n) ")
-        if ans == "y":
-            print(i)
-        else:
-            i = i-1
-            print(i)
-
+    list = [2, 4, 6, 8]                             
+    while 1 > 0:    
+        ans = int(input("Choose a number: "))
+        turn = 0
+        count = 0
+        for i in list:
+            if i > ans:
+                list.insert(count, ans)
+                turn += 1
+                break
+            count += 1
+        if turn == 0:
+            list.append(ans)
+        
+        print(list)
 if __name__ == "__main__":
     main()

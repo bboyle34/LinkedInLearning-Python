@@ -9,27 +9,38 @@ from datetime import date
 
 def rng():
     #generate 10 random distinct numbers until the user is satisfied or until the array is full with 100 numbers
-
+    #lets add the numbers to the list in order
     list = []
     x = 0
     while x < 1:
         if len(list) > 99:
             print("the array is full of 100 numbers")
+            print(list)
             break
         y = 0
         while y < 10:
+            turn = 0
+            count = 0
             num = randint(0, 100)
             if num in list:
                 print("number exists, trying again...")
                 
             else:
                 print(num)
-                list.append(num)         
-                y+= 1
+                for i in list:
+                    if i > num:
+                        list.insert(count, num)
+                        turn += 1
+                        break
+                    count += 1
+                if turn == 0:
+                    list.append(num)
+                y+= 1                
 
         ans = input("Do you wish to continue? (y/n)")
         if ans == "n":
             x = x + 1
+            print(list)
 
 def cal():
     c = calendar.TextCalendar(calendar.SUNDAY)
@@ -37,7 +48,7 @@ def cal():
     st = c.formatmonth(2020, today.month, 0, 0)
     print(st)
 
-def
+
 
 def main():
     print("rng")
