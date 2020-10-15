@@ -41,22 +41,36 @@ def rng():
         if ans == "n":
             x = x + 1
             print(list)
+    print()
 
 def cal():
     c = calendar.TextCalendar(calendar.SUNDAY)
     today = date.today()
     st = c.formatmonth(2020, today.month, 0, 0)
     print(st)
-
-
+    ans = "y"
+    while ans == "y":
+        ans = input("Would you like to see another month? (y/n) ")
+        if ans == "y":
+            mon = int(input("Pick a month (1-12): "))
+            if mon > 12 or mon < 1:
+                print("Invalid month selection")
+            else:
+                ts = c.formatmonth(2020, mon, 0, 0)
+                print(ts)
+        print()
 
 def main():
     print("rng")
     
     dec = 0
     while dec < 1:
+        print()
+        print("##############################")
         print("1. (R)NG Machine \n2. (C)alendar Print \n3. (Q)uit")
+        print("##############################")
         choice = input("what would you like to do? ")
+        print()
         if choice == "R" or choice == "r" or choice == "1":
             rng()
         elif choice == "C" or choice == "c" or choice == "2":
