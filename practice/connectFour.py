@@ -25,13 +25,21 @@ def printBoard(board):
     print()
     print("___________________________________________")
     print()
+    tank = 0
     for i in range(len(board)):
-        print("| ", end = " ")
         for h in range(len(board[i])):
             if i == 0:
+                if h == 0:
+                    print("| ", end = " ")   
                 print(h, end = " ")
                 print(" | ", end = " ")
-        
+                tank = 1
+            if h == len(board) and tank == 1:
+                print()
+                print("___________________________________________") 
+                print()
+        tank = 0
+        print("| ", end = " ")
         for j in range(len(board[i])):
             print(board[i][j], end = " ")
             print(" | " , end = " ")
